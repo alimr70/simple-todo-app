@@ -3,10 +3,10 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 import type { RootState } from "../../app/store"
 
 type TodoType = {
-  id: number
+  id: string
   value: string
-  isDone: boolean
-  isDeleted: boolean
+  isDone?: boolean
+  isDeleted?: boolean
 }
 
 type TodosState = TodoType[]
@@ -19,7 +19,7 @@ export const todosSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action: PayloadAction<TodoType>) => {
-      state = [...state, action.payload]
+      return [...state, action.payload]
     }
   }
 })
