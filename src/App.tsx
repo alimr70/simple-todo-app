@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import TaskInput from "./components/TaskInput"
 import { useAppSelector } from "./utils/hooks"
-import { Container, Divider } from '@chakra-ui/react'
+import { Container, Flex } from '@chakra-ui/react'
 import ThemeToggle from "./components/ThemeToggle"
-import TaskItem from "./components/TaskItem"
+import TaskItemsContainer from "./components/TaskItemsContainer"
 
 function App() {
   const todos = useAppSelector(state => state.todos)
@@ -13,13 +13,12 @@ function App() {
   }, [todos])
 
   return (
-    <Container maxW='xl' >
-      <ThemeToggle />
-      <Divider orientation='horizontal' my={3} />
-      <TaskItem title="Task Item Test 1" />
-      <TaskItem title="Task Item Test 2" />
-      <Divider orientation='horizontal' my={3} />
-      <TaskInput />
+    <Container maxW='xl' h='full' py='5' >
+      <Flex direction='column' h='full' w='full'>
+        <ThemeToggle />
+        <TaskItemsContainer />
+        <TaskInput />
+      </Flex>
     </Container >
   )
 }

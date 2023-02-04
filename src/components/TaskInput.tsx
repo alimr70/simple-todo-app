@@ -2,7 +2,7 @@ import { KeyboardEvent, useCallback, useRef } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { useAppDispatch } from '../utils/hooks'
 import { addTodo } from '../features/todos/todosSlice'
-import { HStack, Box, Input, Button } from '@chakra-ui/react'
+import { HStack, Box, Input, Button, Divider } from '@chakra-ui/react'
 
 const TaskInput = () => {
   const taskInputRef = useRef<HTMLInputElement>(null)
@@ -14,8 +14,7 @@ const TaskInput = () => {
     dispatch(addTodo({
       id: uuidv4(),
       value: taskInputRef.current.value,
-      isDone: false,
-      isDeleted: false
+      isDone: false
     }))
 
     taskInputRef.current.value = ''
@@ -27,10 +26,13 @@ const TaskInput = () => {
 
   return (
     <Box>
-      <HStack>
-        <Input ref={taskInputRef} variant='outline' placeholder='Add a task!' size='lg' onKeyDown={handleEnterKey} />
-        <Button colorScheme='blue' size='lg' onClick={handleSubmit}>Add</Button>
-      </HStack>
+      <Divider orientation='horizontal' my={3} />
+      <Box>
+        <HStack>
+          <Input ref={taskInputRef} variant='outline' placeholder='Add a task!' size='lg' onKeyDown={handleEnterKey} />
+          <Button colorScheme='blue' size='lg' onClick={handleSubmit}>Add</Button>
+        </HStack>
+      </Box>
     </Box>
   )
 }
