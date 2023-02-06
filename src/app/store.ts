@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit"
-import todosSlice from "../features/todos/todosSlice"
+import tasksSlice from "../features/tasks/tasksSlice"
 
 export const store = configureStore({
   reducer: {
-    todos: todosSlice
+    tasks: tasksSlice
   }
 })
 

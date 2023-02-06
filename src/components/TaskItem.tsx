@@ -1,7 +1,7 @@
 import { Heading, IconButton, Flex } from "@chakra-ui/react"
 import { CheckIcon, DeleteIcon } from '@chakra-ui/icons'
 import { useAppDispatch } from "../utils/hooks"
-import { checkTodo, deleteTodo } from "../features/todos/todosSlice"
+import { checkTask, deleteTask } from "../features/tasks/tasksSlice"
 
 type PropsType = {
   id: string
@@ -12,11 +12,11 @@ const TaskItem = ({ id, title }: PropsType) => {
   const dispatch = useAppDispatch()
 
   const handleCheck = () => {
-    dispatch(checkTodo({ id }))
+    dispatch(checkTask({ id }))
   }
 
   const handleDelete = () => {
-    dispatch(deleteTodo({ id }))
+    dispatch(deleteTask({ id }))
   }
 
   return (

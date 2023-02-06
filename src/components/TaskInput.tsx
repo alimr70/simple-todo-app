@@ -1,7 +1,7 @@
 import { KeyboardEvent, useCallback, useRef } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { useAppDispatch } from '../utils/hooks'
-import { addTodo } from '../features/todos/todosSlice'
+import { addTask } from '../features/tasks/tasksSlice'
 import { HStack, Box, Input, Button, Divider } from '@chakra-ui/react'
 
 const TaskInput = () => {
@@ -11,7 +11,7 @@ const TaskInput = () => {
   const handleSubmit = useCallback(() => {
     if (!taskInputRef.current || taskInputRef?.current?.value === '') return
 
-    dispatch(addTodo({
+    dispatch(addTask({
       id: uuidv4(),
       value: taskInputRef.current.value,
       isDone: false

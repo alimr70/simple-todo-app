@@ -1,16 +1,14 @@
-import { Box, Button, Divider, useColorMode } from "@chakra-ui/react"
+import { MoonIcon, SunIcon } from "@chakra-ui/icons"
+import { IconButton, useColorMode } from "@chakra-ui/react"
 
 const ThemeToggle = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <Box>
-      <header>
-        <Button onClick={toggleColorMode}>
-          Toggle {colorMode === 'dark' ? 'light' : 'dark'}
-        </Button>
-      </header>
-      <Divider orientation='horizontal' my={3} />
-    </Box>
+    <IconButton
+      aria-label={colorMode === 'dark' ? "Toggle light" : "Toggle dark"}
+      icon={colorMode === 'dark' ? <SunIcon color="yellow.400" /> : <MoonIcon />}
+      onClick={toggleColorMode}
+    />
   )
 }
 export default ThemeToggle
