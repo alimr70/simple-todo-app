@@ -1,5 +1,5 @@
 import { Stack } from "@chakra-ui/react"
-import { useAppSelector } from "../utils/hooks"
+import { useAppSelector } from "../hooks/reduxHooks"
 import TaskItem from "./TaskItem"
 
 const TaskItemsContainer = () => {

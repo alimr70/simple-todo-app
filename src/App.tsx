@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import TaskInput from "./components/TaskInput"
-import { useAppSelector } from "./utils/hooks"
+import { useAppSelector } from "./hooks/reduxHooks"
 import { Container, Flex } from '@chakra-ui/react'
 import TaskItemsContainer from "./components/TaskItemsContainer"
 import Header from "./components/Header"
