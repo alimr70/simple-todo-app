@@ -21,9 +21,9 @@ const TaskItem = ({ id, title }: PropsType) => {
 
   return (
     <Flex direction='row' align='center' gap={3} border='1px' borderRadius="xl" borderColor='gray.600' p={2} my='2'>
-      <IconButton onClick={handleCheck} borderRadius="3xl" aria-label="CheckIcon" icon={<CheckIcon />} />
+      <IconButton variant='outline' onClick={handleCheck} borderRadius="3xl" aria-label="CheckIcon" icon={<CheckIcon />} />
       <Heading fontSize='xl'>{title}</Heading>
-      <IconButton onClick={handleDelete} ms='auto' aria-label="DeleteIcon" icon={<DeleteIcon color='red.500' />} />
+      <IconButton variant='outline' onClick={handleDelete} ms='auto' aria-label="DeleteIcon" icon={<DeleteIcon color='red.500' />} />
     </Flex>
   )
 }
