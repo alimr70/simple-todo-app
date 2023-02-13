@@ -22,7 +22,7 @@ export const tasksSlice = createSlice({
     },
     checkTask: (state, action: PayloadAction<CheckTaskType>) => {
       let targetTask = state.find(task => task.id === action.payload.id) as TaskType
-      targetTask = { ...targetTask, isDone: true }
+      targetTask = { ...targetTask, isDone: !targetTask.isDone }
       state = state.filter(task => task.id !== action.payload.id)
       return [...state, targetTask]
     },
