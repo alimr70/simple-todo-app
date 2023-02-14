@@ -1,12 +1,14 @@
-import { Button } from "@chakra-ui/react"
+import { Button, Tooltip } from "@chakra-ui/react"
 import { toggleRtl } from "../features/lang/langSlice"
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks"
 
 const RtlToggle = () => {
   const dispatch = useAppDispatch()
-  const { lang } = useAppSelector((state) => state.lang)
+  const lang = useAppSelector(state => state.lang.lang)
   return (
-    <Button onClick={() => dispatch(toggleRtl())}>{lang === 'en' ? 'ع' : 'E'}</Button>
+    <Tooltip label={lang === "en" ? 'تحويل للعربية' : 'Change To English'}>
+      <Button onClick={() => dispatch(toggleRtl())}>{lang === 'en' ? 'ع' : 'E'}</Button>
+    </Tooltip>
   )
 }
 export default RtlToggle
