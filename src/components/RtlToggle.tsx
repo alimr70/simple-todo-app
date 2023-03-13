@@ -7,7 +7,7 @@ const RtlToggle = () => {
   const lang = useAppSelector(state => state.lang.lang)
   return (
     <Tooltip label={lang === "en" ? 'تحويل للعربية' : 'Change To English'}>
-      <Button onClick={() => dispatch(toggleRtl())}>{lang === 'en' ? 'ع' : 'E'}</Button>
+      <Button onClick={() => dispatch(toggleRtl())}>{lang === 'en' ? 'ع' : 'En'}</Button>
     </Tooltip>
   )
 }
