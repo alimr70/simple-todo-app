@@ -13,7 +13,7 @@ function App() {
   }, [tasks])
 
   return (
-    <Container maxW='xl' h='full' py='5' >
+    <Container maxW='xl' h='100svh' py='5' >
       <Flex direction='column' h='full' w='full'>
         <Header />
         <TaskItemsContainer />
